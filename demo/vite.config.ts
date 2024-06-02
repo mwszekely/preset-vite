@@ -9,6 +9,7 @@ export default defineConfig({
 				enabled: true,
 				renderTarget: "#app",
 				additionalPrerenderRoutes: ["/404"],
+				fetchEncoding: null,
 			},
 		}),
 	],

@@ -2,9 +2,11 @@ import { useState } from "preact/hooks";
 
 const cache = new Map();
 
+const decoder = new TextDecoder("utf-8");
+
 async function load(url: string) {
 	const res = await fetch(url);
-	if (res.ok) return await res.text();
+	if (res.ok) return decoder.decode(await res.arrayBuffer());
 	throw new Error(`Failed to fetch ${url}!`);
 }
 

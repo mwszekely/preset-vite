@@ -64,6 +64,14 @@ export interface PreactPluginOptions {
 		 * Additional routes that should be prerendered
 		 */
 		additionalPrerenderRoutes?: string[];
+
+		/**
+		 * When using `fs.readFile` to emulate `fetch` during prerender,
+		 * this controls the type of the result returned in the `Response`.
+		 *
+		 * Defaults to "utf-8". Pass `null` to return an undecoded `ArrayBuffer` instead.
+		 */
+		fetchEncoding?: BufferEncoding;
 	};
 
 	/**
